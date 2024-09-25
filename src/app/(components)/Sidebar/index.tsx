@@ -45,14 +45,14 @@ const Sidebar = () => {
           <div className="text-xl font-bold text-gray-800 dark:text-white">
             KIRA
           </div>
-          {isSidebarCollapsed ? null : (
+          {!isSidebarCollapsed && (
             <button
               className="py-3"
               onClick={() =>
                 dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))
               }
             >
-              <X className="h-6 w-6 text-gray-800 hover:text-gray-500 dark:text-white" />
+              <X className="h-6 w-6 text-gray-800 hover:text-gray-500 dark:text-white dark:hover:text-gray-300" />
             </button>
           )}
         </div>
