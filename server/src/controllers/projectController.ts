@@ -13,7 +13,7 @@ export const getProjects = async (
   } catch (err) {
     res
       .status(500)
-      .json({ message: `Error: ${err}, error retrieving projects.` });
+      .json({ message: `Error retrieving projects.` });
   }
 };
 
@@ -33,6 +33,6 @@ export const createProject = async (
     });
     res.status(201).json(newProject);
   } catch (err) {
-    res.status(500).json({ message: `Error: ${err}, error creating project.` });
+    res.status(500).json({ message: `Error creating project.` });
   }
 };
