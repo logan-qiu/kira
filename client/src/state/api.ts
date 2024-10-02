@@ -31,6 +31,7 @@ export interface Attachment {
   uploadedById: number;
 }
 export interface User {
+  profilePictureUrl: any;
   userId?: number;
   username: string;
   email: string;
@@ -108,4 +109,5 @@ export const {
   useCreateProjectMutation,
   useGetTasksQuery,
   useCreateTaskMutation,
+  useUpdateTaskStatusMutation,
 } = api;
