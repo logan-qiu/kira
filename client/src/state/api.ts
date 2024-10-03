@@ -17,7 +17,7 @@ export enum Priority {
 }
 
 export enum Status {
-  Todo = "To Do",
+  ToDo = "To Do",
   WorkInProgress = "Work In Progress",
   UnderReview = "Under Review",
   Completed = "Completed",
@@ -48,16 +48,17 @@ export interface Task {
   tags?: string;
   startDate?: string;
   dueDate?: string;
-  points?: string;
-  projectId: string;
-  authorUserId?: string;
-  assignedUserId?: string;
+  points?: number;
+  projectId: number;
+  authorUserId?: number;
+  assignedUserId?: number;
 
   author?: User;
   assignee?: User;
   comments?: Comment[];
   attachments?: Attachment[];
 }
+
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
