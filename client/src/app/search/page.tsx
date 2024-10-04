@@ -31,8 +31,6 @@ const Search = () => {
     return handleSearch.cancel;
   }, [handleSearch.cancel]);
 
-  console.log(searchTerm);
-
   return (
     <div className="p-8">
       <Header name="Search" />
