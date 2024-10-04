@@ -95,8 +95,6 @@ const userId = 1;
   const filteredTasks = tasks?.filter(
     (task: Task) => task.priority === priority,
   );
-  console.log(tasks);
-  
 
   if (isTasksError || !tasks) return <div>Error fetching tasks</div>;
 
