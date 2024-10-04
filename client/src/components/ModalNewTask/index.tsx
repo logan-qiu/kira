@@ -3,13 +3,13 @@ import { Priority, Status, useCreateTaskMutation } from "@/state/api";
 import { useState } from "react";
 import { formatISO } from "date-fns";
 
-type Props = {
+type ModalNewTaskProps = {
   isOpen: boolean;
   onClose: () => void;
   id?: string | null;
 };
 
-const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
+const ModalNewTask = ({ isOpen, onClose, id = null }: ModalNewTaskProps) => {
   const [createTask, { isLoading }] = useCreateTaskMutation();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -47,7 +47,6 @@ const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
   };
 
   const isFormValid = () => {
-    return title && authorUserId;
     return title && authorUserId && !(id !== null || projectId);
   };
 
