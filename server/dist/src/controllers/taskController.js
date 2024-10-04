@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateTaskStatus = exports.createTask = exports.getTasks = void 0;
+exports.getUserTasks = exports.updateTaskStatus = exports.createTask = exports.getTasks = void 0;
 const prisma_1 = __importDefault(require("../prisma"));
 const getTasks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { projectId } = req.query;
@@ -72,14 +72,36 @@ const updateTaskStatus = (req, res) => __awaiter(void 0, void 0, void 0, functio
             },
             data: {
                 status: status,
-            }
+            },
         });
         res.json(updatedTask);
     }
     catch (err) {
-        res
-            .status(500)
-            .json({ message: `Error updating task: ${err.message}.` });
+        res.status(500).json({ message: `Error updating task: ${err.message}.` });
     }
 });
 exports.updateTaskStatus = updateTaskStatus;
+const getUserTasks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { userId } = req.params;
+    try {
+        const tasks = yield prisma_1.default.task.findMany({
+            where: {
+                OR: [
+                    { authorUserId: Number(userId) },
+                    { assignedUserId: Number(userId) },
+                ],
+            },
+            include: {
+                author: true,
+                assignee: true,
+            },
+        });
+        res.json(tasks);
+    }
+    catch (error) {
+        res
+            .status(500)
+            .json({ message: `Error retrieving user's tasks: ${error.message}` });
+    }
+});
+exports.getUserTasks = getUserTasks;
