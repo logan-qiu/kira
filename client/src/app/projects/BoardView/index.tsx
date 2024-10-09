@@ -33,7 +33,7 @@ const BoardView = ({ id, setIsModalNewTaskOpen }: BoardViewProps) => {
   if (error)
     return (
       <div>
-        There's an error occurred while fetching tasks, please try again
+        There&apos;s an error occurred while fetching tasks, please try again
       </div>
     );
 
