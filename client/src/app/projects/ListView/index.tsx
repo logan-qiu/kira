@@ -3,12 +3,12 @@ import TaskCard from "@/components/TaskCard";
 import { Task, useGetTasksQuery } from "@/state/api";
 import React from "react";
 
-type Props = {
+type ListViewProps = {
   id: string;
   setIsModalNewTaskOpen: (isOpen: boolean) => void;
 };
 
-const ListView = ({ id, setIsModalNewTaskOpen }: Props) => {
+const ListView = ({ id, setIsModalNewTaskOpen }: ListViewProps) => {
   const {
     data: tasks,
     error,

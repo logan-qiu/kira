@@ -4,7 +4,7 @@ import { dataGridClassNames, dataGridSxStyles } from "@/lib/utils";
 import { useGetTasksQuery } from "@/state/api";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
-type Props = {
+type TableViewProps = {
   id: string;
   setIsModalNewTaskOpen: (isOpen: boolean) => void;
 };
@@ -64,7 +64,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const TableView = ({ id, setIsModalNewTaskOpen }: Props) => {
+const TableView = ({ id, setIsModalNewTaskOpen }: TableViewProps) => {
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
   const {
     data: tasks,

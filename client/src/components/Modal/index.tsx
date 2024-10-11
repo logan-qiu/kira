@@ -2,14 +2,14 @@ import ReactDOM from "react-dom";
 import Header from "../Header";
 import { X } from "lucide-react";
 
-type Props = {
+type ModalProps = {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
   name: string;
 };
 
-const Modal = ({ children, isOpen, onClose, name }: Props) => {
+const Modal = ({ children, isOpen, onClose, name }: ModalProps) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(

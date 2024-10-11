@@ -3,12 +3,12 @@ import { useCreateProjectMutation } from "@/state/api";
 import { useState } from "react";
 import { formatISO } from "date-fns";
 
-type Props = {
+type ModalNewProjectProps = {
   isOpen: boolean;
   onClose: () => void;
 };
 
-const ModalNewProject = ({ isOpen, onClose }: Props) => {
+const ModalNewProject = ({ isOpen, onClose }: ModalNewProjectProps) => {
   const [createProject, { isLoading }] = useCreateProjectMutation();
   const [projectName, setProjectName] = useState("");
   const [description, setDescription] = useState("");

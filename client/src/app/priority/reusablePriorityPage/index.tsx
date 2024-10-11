@@ -14,7 +14,7 @@ import {
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useState } from "react";
 
-type Props = {
+type ReusablePriorityPageProps = {
   priority: Priority;
 };
 
@@ -73,7 +73,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const ReusablePriorityPage = ({ priority }: Props) => {
+const ReusablePriorityPage = ({ priority }: ReusablePriorityPageProps) => {
   const [view, setView] = useState("list");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
 

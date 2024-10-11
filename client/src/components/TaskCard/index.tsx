@@ -2,11 +2,11 @@ import { Task } from "@/state/api";
 import { format } from "date-fns";
 import Image from "next/image";
 
-type Props = {
+type TaskCardProps = {
   task: Task;
 };
 
-const TaskCard = ({ task }: Props) => {
+const TaskCard = ({ task }: TaskCardProps) => {
   //TODO: maybe work on styling a bit better on this
   return (
     <div className="mb-3 rounded bg-white p-4 shadow dark:bg-dark-secondary dark:text-white">
