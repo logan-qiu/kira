@@ -42,9 +42,16 @@ const formFields = {
   },
 };
 
+const containerStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh",
+};
+
 const AuthProvider = ({ children }: any) => {
   return (
-    <div>
+    <div style={containerStyle}>
       <Authenticator formFields={formFields}>
         {({ user }: any) =>
           user ? (
