@@ -1,11 +1,11 @@
 This is a semi-replica of Jira.
-< br / >
+<br />
 You will need to register an account with a valid email (to receive auth code) to tryout the [dashboard](https://main.d7fqemi70qbqc.amplifyapp.com/) and its features!
-< br / >
+<br />
 Or you can use the demo account:
-< br / >
+<br />
 username: testing1
-< br / >
+<br />
 password: Aaa123123!
 
 Tech used in this project includes but not limited to:
