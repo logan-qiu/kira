@@ -39,9 +39,9 @@ const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <StoreProvider>
       {/* temporary disable auth */}
-      {/* <AuthProvider> */}
+      <AuthProvider>
         <DashboardLayout>{children}</DashboardLayout>
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </StoreProvider>
   );
 };
