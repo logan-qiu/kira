@@ -7,6 +7,7 @@ type UserCardProps = {
 
 const UserCard = ({ user }: UserCardProps) => {
   const { profilePictureUrl, username, email } = user;
+  console.log('testing');
   
   return (
     <div className="flex items-center rounded border p-4 shadow">
